@@ -13,7 +13,15 @@ const BuildControls = (props) => {
   return (
     <div className={classes.BuildControls}>
       {controls.map((ctrl) => {
-       return  <BuildControl label={ctrl.label} key={ctrl.label} />;
+        return (
+          <BuildControl
+            label={ctrl.label}
+            key={ctrl.label}
+            more={() => props.addIngredients(ctrl.type)}
+            less={() => props.removeIngredients(ctrl.type)}
+            disabled={props.disabledStatus[ctrl.type]}
+          />
+        );
       })}
     </div>
   );
