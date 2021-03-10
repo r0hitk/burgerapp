@@ -8,3 +8,11 @@
   margin: auto;
   padding: 10px 0;
 }
+
+.Price{
+    background-color: #228c1d;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px 5px;
+}
