@@ -1,0 +1,9 @@
+.OrderSummary {
+  text-align: center;
+  background-color: #f4d004;
+}
+
+.OrderSummary ul {
+  list-style: none;
+  padding-left: 0;
+}

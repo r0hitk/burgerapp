@@ -5,7 +5,7 @@ import classes from "./Layout.module.css";
 const Layout = (props) => {
   return (
     <AuxComponent>
-      <div>Toolbar,Side Drawer, Backdrop</div>
+      <div>Toolbar,Side Drawer</div>
       <main className={classes.content}>{props.children}</main>
     </AuxComponent>
   );
