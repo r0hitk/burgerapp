@@ -29,6 +29,14 @@ class BurgerBuilder extends React.Component {
     this.setState({ ordering: true });
   };
 
+  closeModal = () => {
+    this.setState({ ordering: false });
+  };
+
+  continueBtn = () => {
+    alert("Loading Payment's Page...");
+  };
+
   updatePurchasableState = (ingredients) => {
     const sum = Object.keys(ingredients)
       .map((ingr) => {
@@ -84,8 +92,12 @@ class BurgerBuilder extends React.Component {
     }
     return (
       <AuxComponent>
-        <Modal show={this.state.ordering}>
-          <OrderSummary ingredients={this.state.ingredients} />
+        <Modal closeModal={this.closeModal} show={this.state.ordering}>
+          <OrderSummary
+            clickCancel={this.closeModal}
+            clickContinue={this.continueBtn}
+            ingredients={this.state.ingredients}
+          />
         </Modal>
         <Burger allIngredients={this.state.ingredients} />
         <BuildControls
