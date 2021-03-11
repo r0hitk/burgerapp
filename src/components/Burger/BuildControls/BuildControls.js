@@ -12,7 +12,19 @@ const controls = [
 const BuildControls = (props) => {
   return (
     <div className={classes.BuildControls}>
-        <div><p className={classes.Price}>Current Price = {props.price.toFixed(2)}</p></div>
+      <div>
+        <p className={classes.Price}>
+          Current Price = {"₹" + props.price.toFixed(2)}
+        </p>
+        <p
+          style={{
+            textAlign: "right",
+            fontSize: "small",
+          }}
+        >
+          (*including Buns=₹30)
+        </p>
+      </div>
       {controls.map((ctrl) => {
         return (
           <BuildControl
@@ -24,6 +36,9 @@ const BuildControls = (props) => {
           />
         );
       })}
+      <button disabled={!props.purchasable} className={classes.OrderButton}>
+        ORDER NOW
+      </button>
     </div>
   );
 };
