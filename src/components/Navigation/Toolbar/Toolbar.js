@@ -7,9 +7,7 @@ import HamburgerMenu from "../SideDrawer/HamburgerMenu/HamburgerMenu";
 const Toolbar = (props) => {
   return (
     <header className={classes.Toolbar}>
-      <div>
-        <HamburgerMenu toggle={props.toggleMenu}/>
-      </div>
+      <HamburgerMenu toggle={props.toggleMenu} />
       <div className={classes.Logo}>
         <Logo />
       </div>
